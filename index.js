@@ -1,3 +1,6 @@
+const redux = require('redux');
+const createStore = redux.legacy_createStore;
+
 // Types
 const MAKE_CAKE = 'MAKE_CAKE';
 
@@ -22,3 +25,6 @@ const cakeShopeReducer = (state = initialState, { type, payload }) => {
 			return state;
 	}
 };
+
+// Create store;
+const store = createStore(cakeShopeReducer);
