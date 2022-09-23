@@ -2,6 +2,7 @@ const redux = require('redux');
 const createStore = redux.legacy_createStore;
 const middleware = redux.applyMiddleware;
 const { createLogger } = require('redux-logger');
+const produce = require('immer').produce;
 
 // Cake Types
 const MAKE_CAKE = 'MAKE_CAKE';
@@ -40,15 +41,13 @@ const initialIceCreamState = {
 const cakeReducer = (state = initialCakeState, { type, payload }) => {
 	switch (type) {
 		case MAKE_CAKE:
-			return {
-				...state,
-				noOfCake: state.noOfCake + 1,
-			};
+			return produce(state, draft => {
+				draft.noOfCake = state.noOfCake + 1;
+			});
 		case SELL_CAKE:
-			return {
-				...state,
-				noOfCake: state.noOfCake - 1,
-			};
+			return produce(state, draft => {
+				draft.noOfCake = state.noOfCake - 1;
+			});
 		default:
 			return state;
 	}
@@ -58,15 +57,13 @@ const cakeReducer = (state = initialCakeState, { type, payload }) => {
 const iceCreamReducer = (state = initialIceCreamState, { type, payload }) => {
 	switch (type) {
 		case MAKE_ICE_CREAM:
-			return {
-				...state,
-				noOfIceCream: state.noOfIceCream + 1,
-			};
+			return produce(state, draft => {
+				draft.noOfIceCream = state.noOfIceCream + 1;
+			});
 		case SELL_ICE_CREAM:
-			return {
-				...state,
-				noOfIceCream: state.noOfIceCream - 1,
-			};
+			return produce(state, draft => {
+				draft.noOfIceCream = state.noOfIceCream - 1;
+			});
 		default:
 			return state;
 	}
