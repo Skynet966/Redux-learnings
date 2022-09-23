@@ -10,4 +10,7 @@ I made commit with small changes so that we can easily track changes and learn r
 ### Following tools/packages have been used in this project.
 * __Redux :__ A Predictable State Container for JS Apps.
 * __Redux-logger :__ It's an middleware for redux to log state change.
+* __Redux-thunk :__ Provides a pattern for redux to implement async logic.
 * __Immer :__ Immer simplifies handling immutable data structures.
+* __Axios :__ It is a promise-based HTTP Client for node.js and the browser.
+
