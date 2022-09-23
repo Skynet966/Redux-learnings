@@ -10,3 +10,15 @@ const makeACake = () => ({
 const initialState = {
 	cake: 10
 };
+
+// Reducer
+const cakeShopeReducer = (state = initialState, { type, payload }) => {
+	switch (type) {
+		case MAKE_CAKE:
+			return {
+				cake: state.cake + 1
+			};
+		default:
+			return state;
+	}
+};
