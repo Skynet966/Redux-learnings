@@ -1,7 +1,9 @@
 const redux = require('redux');
 const createStore = redux.legacy_createStore;
+const applyMiddleware = redux.applyMiddleware;
 const { default: produce } = require('immer');
 const { bindActionCreators } = require('redux');
+const { default: thunk } = require('redux-thunk');
 
 // Initial state
 const initialState = {
@@ -49,7 +51,7 @@ const reducer = (state = initialState, { type, payload }) => {
 };
 
 // Create redux store
-const store = createStore(reducer);
+const store = createStore(reducer,applyMiddleware(thunk));
 
 // Subscribe to store updates
 const unSubscribe = store.subscribe(() => {
