@@ -84,9 +84,8 @@ const store = createStore(rootReducer, middleware(logger));
 // console.log('Initial Store', store.getState());
 
 // Subscribe to store
-// const unSubscribe = store.subscribe(() =>
-// 	console.log('Updated Store', store.getState()),
-// );
+const unSubscribe = store.subscribe(() =>{});
+// console.log('Updated Store', store.getState()),
 
 // Bind actions
 const actions = bindActions(
@@ -111,4 +110,4 @@ actions.sellAIceCream();
 actions.sellAIceCream();
 
 // Unsubscribe Store
-// unSubscribe();
+unSubscribe();
