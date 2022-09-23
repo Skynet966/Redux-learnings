@@ -4,6 +4,7 @@ const applyMiddleware = redux.applyMiddleware;
 const { default: produce } = require('immer');
 const { bindActionCreators } = require('redux');
 const { default: thunk } = require('redux-thunk');
+const { default: axios } = require('axios');
 
 // Initial state
 const initialState = {
@@ -21,7 +22,7 @@ const FETCH_TODOS_FAILED = 'FETCH_TODOS_FAILED';
 const fetchTodoRequest = () => ({
 	type: FETCH_TODOS_REQUESTED,
 });
-const fetchTodoSuccess = () => ({
+const fetchTodoSuccess = todos => ({
 	type: FETCH_TODOS_SUCCEEDED,
 	payload: todos,
 });
@@ -47,22 +48,42 @@ const reducer = (state = initialState, { type, payload }) => {
 				draft.laoding = false;
 				draft.error = payload;
 			});
+		default:
+			return state;
 	}
 };
 
+// Async function
+const fetchTodos = () => {
+	return dispatch => {
+		dispatch(fetchTodoRequest());
+		axios
+			.get('https://jsonplaceholder.typicode.com/users/10/todos') // provide wrong url to get error message
+			.then(response => {
+				// data is the array of todos
+				const todos = response.data;
+				dispatch(fetchTodoSuccess(todos));
+			})
+			.catch(error => {
+				// error.message is the error message
+				dispatch(fetchTodoFailure(error.message));
+			});
+	};
+};
+
 // Create redux store
-const store = createStore(reducer,applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 // Subscribe to store updates
-const unSubscribe = store.subscribe(() => {
+store.subscribe(() => {
 	console.log('Updated State:', store.getState());
 });
 
 // Bind actions to store dispatch method
 const actions = bindActionCreators(
-	{ fetchTodoRequest, fetchTodoSuccess, fetchTodoFailure },
+	{ fetchTodoRequest, fetchTodoSuccess, fetchTodoFailure, fetchTodos },
 	store.dispatch,
 );
 
-// Unsubscribe to store updates
-unSubscribe();
+// Dispatch the actions
+actions.fetchTodos();
