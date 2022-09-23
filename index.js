@@ -3,10 +3,14 @@ const createStore = redux.legacy_createStore;
 
 // Types
 const MAKE_CAKE = 'MAKE_CAKE';
+const SELL_CAKE = 'SELL_CAKE';
 
 // Action
 const makeACake = () => ({
 	type: MAKE_CAKE
+});
+const sellACake = () => ({
+	type: SELL_CAKE
 });
 
 // Initial State
@@ -20,6 +24,10 @@ const cakeShopeReducer = (state = initialState, { type, payload }) => {
 		case MAKE_CAKE:
 			return {
 				cake: state.cake + 1
+			};
+		case SELL_CAKE:
+			return {
+				cake: state.cake - 1
 			};
 		default:
 			return state;
@@ -39,6 +47,9 @@ const unSubscribe = store.subscribe(() =>
 store.dispatch(makeACake());
 store.dispatch(makeACake());
 store.dispatch(makeACake());
+store.dispatch(sellACake());
+store.dispatch(sellACake());
+store.dispatch(sellACake());
 
 // Unsubscribe Store
 unSubscribe();
