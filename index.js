@@ -78,7 +78,9 @@ const rootReducer = redux.combineReducers({
 	iceCream: iceCreamReducer,
 });
 
+// create logger
 const logger = createLogger();
+
 // Create store;
 const store = createStore(rootReducer, middleware(logger));
 // console.log('Initial Store', store.getState());
