@@ -34,3 +34,11 @@ console.log('Initial Store', store.getState());
 const unSubscribe = store.subscribe(() =>
 	console.log('Updated Store', store.getState())
 );
+
+// Perform Updates
+store.dispatch(makeACake());
+store.dispatch(makeACake());
+store.dispatch(makeACake());
+
+// Unsubscribe Store
+unSubscribe();
