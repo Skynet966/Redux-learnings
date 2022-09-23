@@ -28,3 +28,4 @@ const cakeShopeReducer = (state = initialState, { type, payload }) => {
 
 // Create store;
 const store = createStore(cakeShopeReducer);
+console.log('Initial Store', store.getState());
