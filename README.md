@@ -8,6 +8,6 @@ I made commit with small changes so that we can easily track changes and learn r
 * Node Js
 
 ### Following tools/packages have been used in this project.
-* Redux : A Predictable State Container for JS Apps.
-* Redux-logger : It's an middleware for redux to log state change.
-* Immer : Immer simplifies handling immutable data structures.
+* __Redux :__ A Predictable State Container for JS Apps.
+* __Redux-logger :__ It's an middleware for redux to log state change.
+* __Immer :__ Immer simplifies handling immutable data structures.
