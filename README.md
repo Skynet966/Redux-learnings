@@ -14,6 +14,7 @@ I made commit with small changes so that we can easily track changes and learn r
 * __Immer :__ Immer simplifies handling immutable data structures.
 * __Axios :__ It is a promise-based HTTP Client for node.js and the browser.
 * __Redux-toolkit :__ The batteries-included toolset for efficient Redux development.
+* __Vite :__ It is a build tool that provides faster development experience for web-dev.
 
 
 ## Redux Concerns
