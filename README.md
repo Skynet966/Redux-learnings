@@ -7,10 +7,31 @@ I made commit with small changes so that we can easily track changes and learn r
 * JavaScript
 * Node Js
 
-### Following tools/packages have been used in this project.
+### Following packages have been used in this project.
 * __Redux :__ A Predictable State Container for JS Apps.
 * __Redux-logger :__ It's an middleware for redux to log state change.
 * __Redux-thunk :__ Provides a pattern for redux to implement async logic.
 * __Immer :__ Immer simplifies handling immutable data structures.
 * __Axios :__ It is a promise-based HTTP Client for node.js and the browser.
+* __Redux-toolkit :__ The batteries-included toolset for efficient Redux development.
 
+
+## Redux Concerns
+* Redux requires too much boilderplate code
+    * Action
+    * Action object
+    * Action creator
+    * Switch statement in a reducer
+* A lot of other packages have to be installed to work with redux
+    * Redux-thunk
+    * Immer
+    * Redux-devtools
+
+#### There was a need to improve the developer experience for redux
+
+
+## Redux Toolkit
+___
+### Redux toolkit is the offical, opinionated, batteries-included toolset for efficient **Redux development.**
+* Abstract over the setup process
+* Handle the most common use cases
