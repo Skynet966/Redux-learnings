@@ -1,4 +1,4 @@
-const { createAsyncThunk, createSlice } = require('@reduxjs/toolkit');
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 // Generated pending, fulfilled and rejected action types
 export const fetchTodos = createAsyncThunk('todo/fetchTodos', () => {
 	return axios
-		.get('https://jsonplaceholder.typicode.com/users/10/todoss') // provide wrong url to get error message
+		.get('https://jsonplaceholder.typicode.com/users/10/todos') // provide wrong url to get error message
 		.then(response => response.data);
 });
 

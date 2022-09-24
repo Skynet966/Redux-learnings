@@ -1,4 +1,6 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
+import cakeSlice from '../cake/cakeSlice'
+const cakeActions = cakeSlice.actions;
 
 const initState = {
 	noOfIcecreams: 10,

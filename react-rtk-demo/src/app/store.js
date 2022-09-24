@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
-import cakeSlice from '../features/cake/cake.slice';
-import icecreamSlice from '../features/icecream/icecream.slice';
-import todoSlice, { fetchTodos } from '../features/todo/todo.slice';
+import cakeSlice from '../features/cake/cakeSlice';
+import icecreamSlice from '../features/icecream/icecreamSlice';
+import todoSlice, { fetchTodos } from '../features/todo/todoSlice';
 
 const cakeReducer = cakeSlice.reducer;
 const icecreamReducer = icecreamSlice.reducer;
