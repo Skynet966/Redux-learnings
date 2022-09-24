@@ -1,11 +1,12 @@
 const configureStore = require('@reduxjs/toolkit').configureStore;
-const { getDefaultMiddleware } = require('@reduxjs/toolkit');
 const reduxLogger = require('redux-logger');
 const cakeReducer = require('../features/cake/cake.slice');
 const icecreamReducer = require('../features/icecream/icecream.slice');
 
+// create redux-logger
 const logger = reduxLogger.createLogger();
 
+// configure store
 const store = configureStore({
 	reducer: {
 		cake: cakeReducer,
