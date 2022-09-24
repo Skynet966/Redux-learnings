@@ -19,7 +19,7 @@ store.dispatch(cakeActions.restocked(3));
 store.dispatch(icecreamActions.ordered());
 store.dispatch(icecreamActions.ordered());
 store.dispatch(icecreamActions.ordered());
-store.dispatch(icecreamActions.restocked(3));
+store.dispatch(icecreamActions.restocked(6));
 
 // unsubscribe to store
 unsubscribe();
