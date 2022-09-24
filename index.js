@@ -61,6 +61,7 @@ const iceCreamReducer = (state = initialIceCreamState, { type, payload }) => {
 			return produce(state, draft => {
 				draft.noOfIceCream = state.noOfIceCream + 1;
 			});
+		case SELL_CAKE:
 		case SELL_ICE_CREAM:
 			return produce(state, draft => {
 				draft.noOfIceCream = state.noOfIceCream - 1;
@@ -84,7 +85,7 @@ const store = createStore(rootReducer, middleware(logger));
 // console.log('Initial Store', store.getState());
 
 // Subscribe to store
-const unSubscribe = store.subscribe(() =>{});
+const unSubscribe = store.subscribe(() => {});
 // console.log('Updated Store', store.getState()),
 
 // Bind actions
@@ -108,6 +109,9 @@ actions.makeAIceCream();
 actions.sellAIceCream();
 actions.sellAIceCream();
 actions.sellAIceCream();
+actions.makeAIceCream();
+actions.makeAIceCream();
+actions.makeAIceCream();
 
 // Unsubscribe Store
 unSubscribe();
