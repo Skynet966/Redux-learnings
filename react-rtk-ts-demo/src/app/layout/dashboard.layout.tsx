@@ -11,7 +11,7 @@ const navigation = [
 	{ name: 'Users List', current: false },
 ];
 
-function classNames (...classes) {
+function classNames (...classes: string[]) {
 	return classes.filter(Boolean).join(' ');
 }
 
